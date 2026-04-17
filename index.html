@@ -1434,7 +1434,7 @@ class MarsGame {
     const _fr=new THREE.Raycaster();_fr.set(new THREE.Vector3(mx,50,mz),new THREE.Vector3(0,-1,0))
     const _fh=_fr.intersectObject(this.terrainMesh);const fy=_fh.length?_fh[0].point.y:0
     seg.position.set(mx,fy,mz)
-    seg.rotation.y=Math.atan2(dx,dz)
+    seg.rotation.y=Math.atan2(dz,dx)
     this.scene.add(seg);this.fenceSegments.push({mesh:seg,length:len,style:this.fenceStyle})
     this._spawnParticles(new THREE.Vector3(mx,fy+1,mz),0x00ffcc)
   }

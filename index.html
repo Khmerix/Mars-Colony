@@ -299,6 +299,7 @@ canvas{display:block}
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
   width:320px;z-index:200;border-radius:14px;
   animation:dIn .3s ease;
+  pointer-events:auto; /* HUD wrapper is pointer-events:none — re-enable so buttons are clickable */
   box-shadow:0 8px 0 rgba(0,0,0,.8),0 12px 40px rgba(0,0,0,.7),0 0 30px var(--clr-cyan-glow);
 }
 .upg-tier-btn{
@@ -561,7 +562,7 @@ canvas{display:block}
   </div>
 
   <!-- Upgrade modal (absolutely positioned in HUD) -->
-  <div id="upgBackdrop" class="hidden" onclick="document.getElementById('upgModal').classList.add('hidden');this.classList.add('hidden');if(G)G.cancelUpg()" style="position:fixed;inset:0;z-index:190;background:rgba(0,0,0,.25)"></div>
+  <div id="upgBackdrop" class="hidden" onclick="document.getElementById('upgModal').classList.add('hidden');this.classList.add('hidden');if(G)G.cancelUpg()" style="position:fixed;inset:0;z-index:190;background:rgba(0,0,0,.25);pointer-events:auto"></div>
   <div id="upgModal" class="fpanel panel-corners upg-modal hidden">
     <div class="panel-hdr"><div class="panel-hdr-title">UPGRADE STRUCTURE</div><button onclick="document.getElementById('upgModal').classList.add('hidden');if(G)G.cancelUpg()" style="background:none;border:none;color:#94a3b8;cursor:pointer;font-size:16px;line-height:1;padding:2px 6px">✕</button></div>
     <div style="padding:14px 16px">
